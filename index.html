@@ -162,7 +162,7 @@
                     <!-- Contact Form -->
                     <div class="contact_from_area mb-100 clearfix wow fadeInUp" data-wow-delay="300ms">
                         <div class="contact_form">
-                            <form action="mail.php" method="post" id="main_contact_form">
+                            <form action="index.html" method="post" id="main_contact_form">
                                 <div class="contact_input_area">
                                     <div id="success_fail_info"></div>
                                     <div class="row">
@@ -275,9 +275,10 @@
             var message = document.getElementById('message').value.replace(' ', '%20')
             var link = document.getElementById('link-email')
             link.href = 'mailto:vinci.hidrotecnica@gmail.com?subject=' + name + '%20' + name2 + '%20-%20' + subject + '&body=' + message
-            console.log(link.href)
-            link.click();
-        };
+            
+            link.click()
+            document.location.href="/"
+        }
     </script>
 
 </body>
