@@ -196,9 +196,10 @@
                                                 <textarea name="message" class="form-control mb-30" id="message" cols="30" rows="6" placeholder="Faça sua pergunta"></textarea>
                                             </div>
                                         </div>
+                                        <a id='link-email' href=""></a>
                                         <!-- Button -->
                                         <div class="col-12">
-                                            <button type="submit" class="btn confer-btn">Enviar mensagem <i class="zmdi zmdi-long-arrow-right"></i></button>
+                                            <button type="submit" onclick="enviaEmail()" class="btn confer-btn">Enviar mensagem <i class="zmdi zmdi-long-arrow-right"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -265,6 +266,19 @@
     <script src="js/confer.bundle.js"></script>
     <!-- Active -->
     <script src="js/default-assets/active.js"></script>
+    <script>
+        var enviaEmail = function() { 
+        
+            var name = document.getElementById('name').value.replace(' ', '%20')
+            var name2 = document.getElementById('name2').value.replace(' ', '%20')
+            var subject = document.getElementById('subject').value.replace(' ', '%20') 
+            var message = document.getElementById('message').value.replace(' ', '%20')
+            var link = document.getElementById('link-email')
+            link.href = 'mailto:chris_michel_@hotmail.com?subject=' + name + '%20' + name2 + '%20-%20' + subject + '&body=' + message
+            console.log(link.href)
+            link.click();
+        };
+    </script>
 
 </body>
 
